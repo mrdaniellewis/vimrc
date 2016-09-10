@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree'
+Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nathanaelkane/vim-indent-guides'
@@ -10,8 +11,16 @@ Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
+
+" Load any extra plugins specified in the home directory
+if filereadable(expand("~/.vim.plugins.local"))
+  source ~/.vim.plugins.local
+endif
 
 call plug#end()
 
@@ -24,6 +33,7 @@ set mouse=a " Enable mouse
 set hidden " Allow multiple unsaved buffers
 set backspace=start,indent,eol
 set backupdir=/var/tmp,~/.tmp,. " Don't clutter project dirs up with swap files
+set directory=/var/tmp,~/.tmp,.
 set shortmess+=A
 set wildmode=list:longest " More logical path expansion
 
@@ -31,6 +41,8 @@ set wildmode=list:longest " More logical path expansion
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent smartindent " tab is 2 spaces
 set backspace=indent,eol,start " Back backspace work as expected
 set nojoinspaces " Use only 1 space after "." when joining lines instead of 2
+set list
+set listchars=tab:→\ ,nbsp:⎵
 
 " --- History ---
 set history=1000 " Default is a miserly 20
@@ -65,6 +77,10 @@ let g:indent_guides_enable_on_vim_startup=1 " Turn on indent guide
 let g:indent_guides_auto_colors=0
 hi IndentGuidesEven ctermbg=0               " Nicer colors
                                             " Example
+
+" wrap on txt files
+:autocmd BufNewFile,BufRead *.txt,*.md set wrap
+
 " --- Search ---
 set hlsearch        " highlight search matches...
 set incsearch       " ...as you type
@@ -119,5 +135,19 @@ command! W :w
 command! Q :q
 command! Qa :qa
 
+" make Y consistent with C and D
+nnoremap Y y$
+
+" <leader>. to view all document buffers
+nmap <silent> <unique> <Leader>b :BufExplorer<CR>
+
+" Double leader to switch to the previous buffer
+map <silent> <unique> <Leader>< :b#<CR>
+
 " Replace the default U (undo last line) to Redo for speedyness
 nmap U <c-r>
+
+" Any local config
+if filereadable(expand("~/.vimrc.local"))
+  source ~/.vimrc.local
+endif
