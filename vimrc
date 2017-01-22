@@ -10,6 +10,8 @@ Plug 'mtscout6/syntastic-local-eslint.vim'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'mileszs/ack.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -87,6 +89,29 @@ set incsearch       " ...as you type
 set ignorecase      " Generally ignore case
 set smartcase       " Care about case when capital letters show up
 
+"  <Leader>f to fuzzy search files
+map <silent> <leader>f :CtrlP<cr>
+
+"  <Leader>F to fuzzy search files in the same directory as the current file
+map <silent> <leader>F :CtrlPCurFile<cr>
+
+"  <Leader>} to Search for a tag in the current project
+map <silent> <leader>} :CtrlPTag<cr>
+
+let g:ctrlp_show_hidden = 1
+
+if executable('ag')
+  let g:ackprg = 'ag --nogroup --nocolor --column'
+  set grepprg=ag\ --nogroup\ --nocolor\ --ignore-case\ --column
+  set grepformat=%f:%l:%c:%m,%f:%l:%m
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_use_caching = 0
+  cnoreabbrev ag Ack
+  cnoreabbrev aG Ack
+  cnoreabbrev Ag Ack
+  cnoreabbrev AG Ack
+endif
+"
 " --- Spell check ---
 set complete+=kspell
 set spell
@@ -97,6 +122,7 @@ let g:syntastic_ruby_rubocop_quiet_messages = { "level" : [] }
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_scss_checkers = ['stylelint']
 
 " --- git gutter ---
 " Set the git gutter colors to be the same as the number column
