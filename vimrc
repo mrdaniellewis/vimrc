@@ -117,7 +117,7 @@ set complete+=kspell
 set spell
 set spelllang=en_gb
 
-" --- Lint  settings sdsd ---
+" --- Lint  settings ---
 let g:syntastic_ruby_rubocop_quiet_messages = { "level" : [] }
 let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
@@ -145,6 +145,7 @@ noremap <Up> :echoe "Use k"<CR>
 noremap <Down> :echoe "Use j"<CR>
 
 " Easier NERDTree access
+let NERDTreeQuitOnOpen = 1
 map <silent> <C-n> :NERDTreeFocus<CR>
 
 " Easier Window movement
