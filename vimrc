@@ -13,6 +13,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
+Plug 'tpope/vim-surround'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
