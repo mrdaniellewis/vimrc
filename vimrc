@@ -14,6 +14,7 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
+Plug 'valloric/youcompleteme'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
