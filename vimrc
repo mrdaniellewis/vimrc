@@ -5,8 +5,7 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'scrooloose/syntastic'
-Plug 'mrdaniellewis/syntastic-local-eslint.vim'
+Plug 'w0rp/ale'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -121,11 +120,15 @@ set spell
 set spelllang=en_gb
 
 " --- Lint  settings ---
-let g:syntastic_ruby_rubocop_quiet_messages = { "level" : [] }
-let g:syntastic_ruby_checkers = ['rubocop', 'mri']
+let g:ale_linters = {
+\   'ruby': ['rubocop'],
+\}
 
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_scss_checkers = ['stylelint']
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'ruby': ['rubocop'],
+\}
 
 " --- git gutter ---
 " Set the git gutter colors to be the same as the number column
