@@ -28,6 +28,9 @@ endif
 
 call plug#end()
 
+" enable extended % matching
+packadd! matchit
+
 filetype plugin indent on
 syntax on
 let mapleader = " "
