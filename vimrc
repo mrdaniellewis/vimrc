@@ -14,6 +14,8 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'valloric/youcompleteme'
+Plug 'maxbrunsfeld/vim-yankstack'
+Plug 'tpope/vim-commentary'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
