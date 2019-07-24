@@ -13,7 +13,6 @@ Plug 'mileszs/ack.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
-Plug 'valloric/youcompleteme'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
 
@@ -45,7 +44,8 @@ set backupdir=/var/tmp,~/.tmp,. " Don't clutter project dirs up with swap files
 set directory=/var/tmp,~/.tmp,.
 set shortmess+=A
 set wildmode=list:longest " More logical path expansion
-
+set backupcopy=yes " Fix hot reloading in Parcel
+"
 " --- Indenting ---
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent smartindent " tab is 2 spaces
 set backspace=indent,eol,start " Back backspace work as expected
