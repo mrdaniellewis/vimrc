@@ -15,6 +15,7 @@ Plug 'godlygeek/tabular'
 Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
+Plug 'ycm-core/YouCompleteMe'
 
 Plug 'tpope/vim-endwise'
 
@@ -23,6 +24,8 @@ Plug 'mxw/vim-jsx'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
+
+
 
 " Load any extra plugins specified in the home directory
 if filereadable(expand("~/.vim.plugins.local"))
