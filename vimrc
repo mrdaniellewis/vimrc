@@ -45,6 +45,7 @@ set backupdir=/var/tmp,~/.tmp,. " Don't clutter project dirs up with swap files
 set directory=/var/tmp,~/.tmp,.
 set shortmess+=A
 set wildmode=list:longest " More logical path expansion
+set backupcopy=yes
 
 " --- Indenting ---
 set expandtab tabstop=2 shiftwidth=2 softtabstop=2 autoindent smartindent " tab is 2 spaces
