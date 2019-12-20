@@ -16,6 +16,8 @@ Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
 
+Plug 'tpope/vim-endwise'
+
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 
