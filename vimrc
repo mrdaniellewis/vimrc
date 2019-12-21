@@ -16,6 +16,7 @@ Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'rafaqz/ranger.vim'
 
 Plug 'tpope/vim-endwise'
 
@@ -109,6 +110,18 @@ map <silent> <leader>F :CtrlPCurFile<cr>
 
 "  <Leader>} to Search for a tag in the current project
 map <silent> <leader>} :CtrlPTag<cr>
+
+" ranger
+let g:ranger_terminal = 'xterm -e'
+map <leader>rr :RangerEdit<cr>
+map <leader>rv :RangerVSplit<cr>
+map <leader>rs :RangerSplit<cr>
+map <leader>rt :RangerTab<cr>
+map <leader>ri :RangerInsert<cr>
+map <leader>ra :RangerAppend<cr>
+map <leader>rc :set operatorfunc=RangerChangeOperator<cr>g@
+map <leader>rd :RangerCD<cr>
+map <leader>rld :RangerLCD<cr>
 
 let g:ctrlp_show_hidden = 1
 
