@@ -94,6 +94,9 @@ hi IndentGuidesEven ctermbg=0               " Nicer colors
 " wrap on txt files
 :autocmd BufNewFile,BufRead *.txt,*.md set wrap
 
+" Fix jsx formatting
+:autocmd BufNewFile,BufRead *.jsx set filetype=javascript.jsx
+
 " --- Search ---
 set hlsearch        " highlight search matches...
 set incsearch       " ...as you type
