@@ -21,10 +21,12 @@ Plug 'tpope/vim-endwise'
 
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'digitaltoad/vim-pug'
 
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'hail2u/vim-css3-syntax'
 Plug 'jparise/vim-graphql'
+Plug 'tpope/vim-markdown'
 
 " Load any extra plugins specified in the home directory
 if filereadable(expand("~/.vim.plugins.local"))
@@ -85,6 +87,7 @@ let g:airline#extensions#tagbar#enabled = 0
 set background=dark
 colorscheme solarized
 set cursorline " Highlight the line the cursor is on
+autocmd BufWinEnter * if line2byte(line("$") + 1) > 1000000 | syntax clear | endif
 
 let g:indent_guides_enable_on_vim_startup=1 " Turn on indent guide
 let g:indent_guides_auto_colors=0
@@ -139,6 +142,8 @@ endif
 set complete+=kspell
 set spell
 set spelllang=en_gb
+let ruby_spellcheck_strings = 1
+highlight SpellBad cterm=underline
 
 " --- Lint  settings ---
 let g:ale_linters = {
@@ -150,6 +155,9 @@ let g:ale_fixers = {
 \   'javascript': ['eslint'],
 \   'ruby': ['rubocop'],
 \}
+
+let g:ale_ruby_rubocop_executable = 'bundle'
+highlight ALEError ctermbg=none cterm=underline
 
 " --- git gutter ---
 " Set the git gutter colors to be the same as the number column
