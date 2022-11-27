@@ -349,7 +349,7 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
-autocmd vimenter * hi CocFloating ctermfg=0 ctermbg=234
+autocmd vimenter * hi CocFloating ctermfg=2 ctermbg=234
 autocmd vimenter * hi CocSearch ctermfg=3
 autocmd vimenter * hi CocMenuSel ctermbg=237
 
