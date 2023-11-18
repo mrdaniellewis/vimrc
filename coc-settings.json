@@ -1,0 +1,12 @@
+{
+  "suggest.noselect": false,
+  "solargraph.diagnostics": true,
+  "solargraph.autoformat": true,
+  "solargraph.formatting": true,
+  "[css][scss][javascript][javascriptreact][json][markdown][html][ruby]": {
+    "coc.preferences.formatOnSave": true
+  },
+  "eslint.autoFixOnSave": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false
+}

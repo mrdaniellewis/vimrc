@@ -5,7 +5,6 @@ Plug 'jlanzarotta/bufexplorer'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'w0rp/ale'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -148,20 +147,6 @@ set spelllang=en_gb
 let ruby_spellcheck_strings = 1
 highlight SpellBad cterm=underline
 
-" --- Lint  settings ---
-let g:ale_linters = {
-\   'ruby': ['rubocop'],
-\}
-
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'javascript': ['eslint'],
-\   'ruby': ['rubocop'],
-\}
-
-let g:ale_ruby_rubocop_executable = 'bundle'
-highlight ALEError ctermbg=none cterm=underline
-
 " --- git gutter ---
 " Set the git gutter colors to be the same as the number column
 hi clear SignColumn
@@ -172,7 +157,6 @@ let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '~'
 let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_modified_removed = '~'
-let g:gitgutter_max_signs = 1000
 
 " --- Keyboard mappings ---
 
