@@ -15,6 +15,7 @@ Plug 'tpope/vim-surround'
 Plug 'maxbrunsfeld/vim-yankstack'
 Plug 'tpope/vim-commentary'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'dense-analysis/ale'
 
 Plug 'tpope/vim-endwise'
 
@@ -336,6 +337,20 @@ nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 autocmd vimenter * hi CocFloating ctermfg=2 ctermbg=234
 autocmd vimenter * hi CocSearch ctermfg=3
 autocmd vimenter * hi CocMenuSel ctermbg=237
+
+let g:ale_linters = {
+\  'ruby': ['rubocop'],
+\  'haml': ['hamllint'],
+\}
+
+let g:ale_fixers = {
+\  'ruby': ['rubocop'],
+\}
+
+let g:ale_ruby_rubocop_executable = 'bundle'
+highlight ALEError ctermbg=none cterm=underline
+let g:ale_linters_explicit = 1
+let g:ale_fix_on_save = 1
 
 " Any local config
 if filereadable(expand("~/.vimrc.local"))

@@ -1,6 +1,6 @@
 {
   "suggest.noselect": false,
-  "solargraph.diagnostics": true,
+  "solargraph.diagnostics": false,
   "solargraph.autoformat": true,
   "solargraph.formatting": true,
   "[css][scss][javascript][javascriptreact][json][markdown][html][ruby]": {
@@ -8,5 +8,5 @@
   },
   "eslint.autoFixOnSave": true,
   "diagnostic.virtualText": true,
-  "diagnostic.virtualTextCurrentLineOnly": false
+  "diagnostic.virtualTextCurrentLineOnly": true
 }
