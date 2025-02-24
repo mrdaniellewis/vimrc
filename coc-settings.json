@@ -1,8 +1,8 @@
 {
   "suggest.noselect": false,
   "solargraph.diagnostics": false,
-  "solargraph.autoformat": true,
-  "solargraph.formatting": true,
+  "solargraph.autoformat": false,
+  "solargraph.formatting": false,
   "[css][scss][javascript][javascriptreact][json][markdown][html][ruby]": {
     "coc.preferences.formatOnSave": true
   },

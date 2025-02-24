@@ -342,13 +342,17 @@ autocmd vimenter * hi CocMenuSel ctermbg=237
 let g:ale_linters = {
 \  'ruby': ['rubocop'],
 \  'haml': ['hamllint'],
+\  'scss': ['stylelint'],
+\  'css': ['stylelint'],
 \}
 
 let g:ale_fixers = {
 \  'ruby': ['rubocop'],
+\  'cucumber': ['prettier'],
 \}
 
 let g:ale_ruby_rubocop_executable = 'bundle'
+let g:ale_haml_hamllint_executable = 'haml-lint-alias'
 highlight ALEError ctermbg=none cterm=underline
 let g:ale_linters_explicit = 1
 let g:ale_fix_on_save = 1
