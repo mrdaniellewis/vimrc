@@ -84,6 +84,7 @@ let g:airline#extensions#hunks#enabled = 1
 let g:airline#extensions#tagbar#enabled = 0
 
 " --- Display settings ---
+set notermguicolors
 set background=dark
 colorscheme solarized
 set cursorline " Highlight the line the cursor is on
